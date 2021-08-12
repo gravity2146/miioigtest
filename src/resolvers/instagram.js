@@ -15,7 +15,7 @@ async function getShortLivedAccessToken(code) {
     formData: {
       client_id: process.env.INSTAGRAM_APP_ID,
       client_secret: process.env.INSTAGRAM_APP_SECRET,
-      redirect_uri: "https://miiotest.herokuapp.com/redirect",
+      redirect_uri: "https://miiotest.herokuapp.com/redirect1",
       code: code,
       grant_type: "authorization_code",
     },
@@ -26,6 +26,7 @@ async function getShortLivedAccessToken(code) {
   });
 
   let response = JSON.parse(body);
+  console.log(response,statusCode)
 
   // check if there is an error, if there is, send it.
   if (statusCode !== 200) {

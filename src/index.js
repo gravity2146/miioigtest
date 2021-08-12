@@ -39,6 +39,9 @@ app.get("/redirect",async (req,res)=>{
   
 
 })
+app.get("/redirect1",(req,res)=>{
+  return res.send("ok")
+})
 
 // start server on the PORT.
 app.listen(PORT, () => console.log(`Server started on port: ${PORT}`));
