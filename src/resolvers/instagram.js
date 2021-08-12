@@ -8,7 +8,7 @@ const postAsync = promisify(post);
 
 // getting a short lived access token
 
-async function getShortLivedAccessToken() {
+async function getShortLivedAccessToken(code) {
   // send request to the API
   let { body, statusCode } = await postAsync({
     url: `https://api.instagram.com/oauth/access_token `,
@@ -16,7 +16,7 @@ async function getShortLivedAccessToken() {
       client_id: process.env.INSTAGRAM_APP_ID,
       client_secret: process.env.INSTAGRAM_APP_SECRET,
       redirect_uri: "https://miiotest.herokuapp.com/redirect",
-      code: process.env.AUTHORIZATION_CODE,
+      code: code,
       grant_type: "authorization_code",
     },
     headers: {

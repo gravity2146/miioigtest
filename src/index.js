@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 4000;
 const { ApolloServer } = require("apollo-server-express");
 const typeDefs = require("./schema");
 const resolvers = require("./resolvers");
+const {getShortLivedAccessToken} = require("./resolvers/instagram")
 
 // initialize express
 const app = express();
@@ -28,12 +29,12 @@ app.get("/get-auth-code", (req, res, next) => {
     `<a href='https://api.instagram.com/oauth/authorize?client_id=${process.env.INSTAGRAM_APP_ID}&redirect_uri=${process.env.REDIRECT_URI}&scope=user_media,user_profile&response_type=code'> Connect to Instagram </a>`
   );
 });
-app.get("/redirect",(req,res)=>{
+app.get("/redirect",async (req,res)=>{
   const pathname = req.query.code
   console.log(pathname)
+  data = await getShortLivedAccessToken(pathname)
+  res.send(data)
   
-  res.send(pathname)
-  res.send("hi")
 
 })
 
