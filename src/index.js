@@ -31,6 +31,7 @@ app.get("/get-auth-code", (req, res, next) => {
 app.get("/redirect",(req,res)=>{
   const pathname = req.url
   console.log(pathname)
+  return res.send(pathname)
 })
 
 // start server on the PORT.
