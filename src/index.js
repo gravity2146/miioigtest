@@ -32,7 +32,7 @@ app.get("/get-auth-code", (req, res, next) => {
 app.get("/redirect",async (req,res)=>{
   const pathname = req.query.code
   let code;
-  code = pathname.substring(0, pathname.length - 2);
+  code = pathname.substring(0, pathname.length);
   console.log("Himanshu",code)
   data = await getShortLivedAccessToken(code)
   return res.send(data)
