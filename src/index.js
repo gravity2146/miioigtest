@@ -32,7 +32,7 @@ app.get("/redirect",(req,res)=>{
   const pathname = req.query.code
   console.log(pathname)
   
-  return res.send("You have Successfully liked your instagram account")
+  return res.send(pathname)
 
 })
 
