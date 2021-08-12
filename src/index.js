@@ -33,13 +33,15 @@ app.get("/redirect",async (req,res)=>{
   const pathname = 'https://miiotest.herokuapp.com/redirect?code=AQDNyYS0CWR4cbygXjewFH3R4QZZ_EIWQ023pQGAwNfZCsNywVz8jJsOgJxLave5y9RuJSL10rGVC5MRpirZN9X_oxdBH33wGm9mQh0U190dEg8bVpXMEJPp2WonHVYM6WxlAVy_cyZToUEGgtg6YubaTlsyZhCI5CkB5IXMaq_EZwNv2kdg06v2IijP_sef6llEHcS13woWfBpWkL884ZT2gjonsQWA4_tzbg-6G-sOog#_'
   let code;
   code = pathname.substring(0, pathname.length - 2);
-  console.log(code)
+  console.log("Himanshu",code)
   data = await getShortLivedAccessToken(code)
   return res.send(data)
   
 
 })
 app.get("/redirect1",(req,res)=>{
+  console.log("welcome")
+  console.log(req.url)
   return res.send("ok")
 })
 
