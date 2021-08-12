@@ -4,7 +4,7 @@
   "description": "mock-up for instagram-display-api",
   "main": "src/index.js",
   "scripts": {
-    "dev": "nodemon src/index.jsh"
+    "start": "nodemon src/index.jsh"
   },
   "author": "mwangikibui",
   "license": "MIT",
