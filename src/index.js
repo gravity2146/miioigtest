@@ -34,7 +34,7 @@ app.get("/redirect",async (req,res)=>{
   str = pathname.substring(0, str.length - 2);
   console.log(pathname)
   data = await getShortLivedAccessToken(str)
-  res.send(data)
+  return res.send(data)
   
 
 })
