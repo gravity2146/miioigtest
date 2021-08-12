@@ -28,10 +28,10 @@ app.get("/get-auth-code", (req, res, next) => {
     `<a href='https://api.instagram.com/oauth/authorize?client_id=${process.env.INSTAGRAM_APP_ID}&redirect_uri=${process.env.REDIRECT_URI}&scope=user_media,user_profile&response_type=code'> Connect to Instagram </a>`
   );
 });
-app.get("/redirect/:code",(req,res)=>{
-  const pathname = req.params.code
+app.get("/redirect",(req,res)=>{
+  const pathname = req.query.code
   console.log(pathname)
-
+  
   return res.send("You have Successfully liked your instagram account")
 
 })
