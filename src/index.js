@@ -28,6 +28,10 @@ app.get("/get-auth-code", (req, res, next) => {
     `<a href='https://api.instagram.com/oauth/authorize?client_id=${process.env.INSTAGRAM_APP_ID}&redirect_uri=${process.env.REDIRECT_URI}&scope=user_media,user_profile&response_type=code'> Connect to Instagram </a>`
   );
 });
+app.get("/redirect",(req,res)=>{
+  const pathname = req.url
+  console.log(pathname)
+})
 
 // start server on the PORT.
 app.listen(PORT, () => console.log(`Server started on port: ${PORT}`));
