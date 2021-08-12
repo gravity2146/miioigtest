@@ -30,7 +30,7 @@ async function getShortLivedAccessToken(code) {
   // check if there is an error, if there is, send it.
   if (statusCode !== 200) {
     let error_message = response.error_message;
-    return "Hi"
+    return new UserInputError(error_message);
   }
 
   // return the response
